@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #4daf54, #3d8880);
+  height: 100vh;
+}
+body .card {
+  margin: 120px auto;
+  width: 320px;
+  height: 400px;
+  background-color: #272d40;
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  position: relative;
+}
+body .card:hover .card-img {
+  transform: translateY(-90px) rotate(-20deg);
+}
+body .card:hover .card-title {
+  transform: translate(-38px, -72px);
+}
+body .card:hover .card-price {
+  transform: translate(-117px, -72px);
+}
+body .card:hover .card-size, body .card:hover .card-color, body .card:hover .card-action {
+  visibility: visible;
+  opacity: 100;
+}
+body .card:hover .card-size {
+  margin-top: -40px !important;
+}
+body .card .card-heart,
+body .card .card-cart {
+  font-size: 25px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+  z-index: 1;
+  cursor: pointer;
+}
+body .card .card-heart:hover,
+body .card .card-cart:hover {
+  color: #4daf54;
+}
+body .card .card-cart {
+  left: unset;
+  right: 20px;
+}
+body .card .card-img {
+  height: 45%;
+  transition: 0.5s;
+}
+body .card .card-img img {
+  width: 100%;
+  position: relative;
+  top: -6rem;
+}
+body .card .card-title,
+body .card .card-price {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.5s;
+}
+body .card .card-title {
+  color: #4daf54;
+}
+body .card .card-size,
+body .card .card-color {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+body .card .card-size {
+  margin-top: 150px;
+}
+body .card .card-size h3 {
+  margin-right: 10px;
+}
+body .card .card-size span {
+  padding: 1px 10px;
+  background-color: #dadada;
+  color: black;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+body .card .card-color span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+body .card .card-color .card-color-green {
+  background-color: green;
+  margin-left: 10px;
+}
+body .card .card-color .card-color-red {
+  background-color: red;
+}
+body .card .card-color .card-color-black {
+  background-color: black;
+}
+body .card .card-action button {
+  background-color: #4daf54;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: 0.25s;
+}
+body .card .card-action button:hover {
+  transform: scale(0.9);
+}
+body .card .card-size,
+body .card .card-color,
+body .card .card-action {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: all 0.4s;
+}

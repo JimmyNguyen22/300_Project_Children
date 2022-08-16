@@ -107,3 +107,87 @@ body {
   border-radius: 3rem;
   transition: transform 0.2s linear;
 }
+
+#dropdown {
+  background-color: #1a1c28;
+  height: 500px;
+}
+#dropdown .dropdown {
+  width: 100%;
+  max-width: 47.5rem;
+  margin: 5rem auto;
+  position: relative;
+}
+#dropdown .dropdown:hover .dropdown-list {
+  display: block;
+}
+#dropdown .dropdown .dropdown-select {
+  width: 100%;
+  padding: 3rem;
+  background-color: #de4b3e;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+#dropdown .dropdown .dropdown-list {
+  margin-top: 2.5rem;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+}
+#dropdown .dropdown .dropdown-list::before {
+  content: "";
+  height: 2.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  transform: translateY(-100%);
+}
+#dropdown .dropdown .dropdown-list .dropdown-item {
+  padding: 3rem;
+  background-color: #de4b3e;
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+#dropdown .dropdown .dropdown-list .dropdown-item:hover {
+  background-color: #c74237;
+}
+#dropdown .dropdown .dropdown-list .dropdown-item:first-child {
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #de4b3e;
+}
+#dropdown .dropdown .dropdown-list .dropdown-item:first-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #de4b3e;
+  transform: translateY(-100%);
+  transition: all 0.25s linear;
+}
+#dropdown .dropdown .dropdown-list .dropdown-item:first-child:hover::before {
+  border-bottom-color: #c74237;
+}
+#dropdown .dropdown .dropdown-list .dropdown-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
