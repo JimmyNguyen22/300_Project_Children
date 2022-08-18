@@ -336,3 +336,94 @@ body {
 .hide-prev {
   display: none;
 }
+
+.search {
+  height: 100px;
+  background: linear-gradient(to right, #4daf54, #3d8880);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search .search-box {
+  background-color: #000;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+.search .search-box .search-box-input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  padding: 15px 100px 15px 15px;
+}
+.search .search-box .search-box-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  border: none;
+}
+
+.search-box.open {
+  width: 400px;
+}
+
+.keycode {
+  height: 80vh;
+  padding: 100px;
+  background-color: #17a2b8;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.keycode .keycode-alert {
+  font-size: 3rem;
+  color: #17a2b8;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px 30px;
+  border: none;
+  font-weight: 600;
+}
+.keycode .keycode-box .keycode-info {
+  height: 200px;
+  width: 200px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 60px;
+}
+.keycode .keycode-box .keycode-detail {
+  display: flex;
+}
+.keycode .keycode-box .keycode-detail .keycode-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+}
+.keycode .keycode-box .keycode-detail .keycode-card p {
+  padding: 10px;
+  color: #000;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.keycode .keycode-box .keycode-detail .keycode-card p:first-child {
+  background-color: #78c0c9;
+  color: #fff;
+}

@@ -73,3 +73,35 @@ right.addEventListener("click", function () {
     showGallery();
   }
 });
+
+// Search box
+
+let btnSearch = document.querySelector(".search-box-btn");
+
+btnSearch.addEventListener("click", function () {
+  this.parentElement.classList.toggle("open");
+  this.previousElementSibling.focus();
+});
+
+// keycode
+
+let key = document.querySelector(".keycode-card.key p:last-child");
+let keyLocation = document.querySelector(".keycode-card.location p:last-child");
+let keyWhich = document.querySelector(".keycode-card.which p:last-child");
+let code = document.querySelector(".keycode-card.code p:last-child");
+let keyAlert = document.querySelector(".keycode-alert");
+let keyBox = document.querySelector(".keycode-box");
+let info = document.querySelector(".keycode-info");
+
+document.addEventListener("keydown", (event) => {
+  let keyName = event.keyCode === 32 ? "Space" : event.key;
+
+  key.innerText = keyName;
+  keyLocation.innerText = event.location;
+  keyWhich.innerText = event.which;
+  code.innerText = event.code;
+  info.innerText = event.which;
+
+  keyAlert.classList.add("hide");
+  keyBox.classList.remove("hide");
+});
