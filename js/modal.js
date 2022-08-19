@@ -102,6 +102,58 @@ document.addEventListener("keydown", (event) => {
   code.innerText = event.code;
   info.innerText = event.which;
 
-  keyAlert.classList.add("hide");
-  keyBox.classList.remove("hide");
+  keyAlert.classList.add("hide-key");
+  keyBox.classList.remove("hide-key");
 });
+
+// search-tag
+let content = document.querySelector(".search-content");
+let input = document.querySelector(".search-input");
+let btnRemove = document.querySelector(".search-btn-remove");
+let arr = ["Front-end", "Back-end"];
+
+function renderTag() {
+  content.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    let arrSearch = arr[i];
+    content.innerHTML += ` <li class="search-list">
+       ${arrSearch}
+        <i class="fa fa-times" onClick="removeTag(${i})">
+    </i>
+</li>`;
+  }
+  content.appendChild(input);
+  input.focus();
+}
+
+renderTag();
+
+// create
+input.addEventListener("keydown", (event) => {
+  if (event.key == "Enter") {
+    arr.push(input.value.trim());
+    input.value = "";
+    renderTag();
+  }
+});
+
+// delete
+
+function removeTag(index) {
+  arr.splice(index, 1);
+  renderTag();
+}
+
+btnRemove.addEventListener("click", () => {
+  arr = [];
+  renderTag();
+});
+
+// Curve background efffects
+const menuItem = document.querySelectorAll(".menu-item");
+menuItem.forEach((item) =>
+  item.addEventListener("click", () => {
+    menuItem.forEach((el) => el.classList.remove("active"));
+    item.classList.add("active");
+  })
+);

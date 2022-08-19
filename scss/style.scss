@@ -1,4 +1,5 @@
 @import "./validation";
+
 html {
   font-size: 62.5%;
   font-family: "Poppins", sans-serif;
@@ -402,11 +403,9 @@ body {
 }
 
 .keycode {
-  height: 80vh;
   padding: 100px;
   background-color: #17a2b8;
   color: #fff;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -454,5 +453,165 @@ body {
         color: #fff;
       }
     }
+  }
+  .hide-key {
+    display: none;
+  }
+}
+
+.search-tag {
+  background-color: #8cc84c;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .search-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+    .search-title {
+      font-size: 2rem;
+    }
+    .search-content {
+      border: 1px solid #888;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 5px;
+      .search-list {
+        background-color: #8cc84c;
+        color: #fff;
+        border-radius: 3px;
+        list-style: none;
+        margin: 4px 3px;
+        padding: 10px;
+        font-size: 1.5rem;
+        i {
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+      .search-input {
+        border: none;
+        outline: none;
+        font-size: 2rem;
+        margin: 10px;
+        flex: 1;
+      }
+    }
+    .search-btn-remove {
+      background-color: #8cc84c;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: all 0.25s;
+      &:hover {
+        background: #7cac49;
+      }
+    }
+  }
+}
+
+// Curve background efffects
+
+.curve-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .menu {
+    background-color: $bg-primary;
+    padding: 50px 15px;
+    border-radius: 15px;
+    width: 400px;
+    margin: 3rem;
+    color: #fff;
+    font-size: 3rem;
+    padding-right: 0;
+    .menu-item {
+      padding: 15px;
+      border-radius: 15px 0 0 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 10px;
+      .menu-text {
+        margin-left: 10px;
+      }
+    }
+    .active {
+      background-color: #fff;
+      color: $bg-primary;
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: $bg-primary;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        transform: translateY(-100%);
+        box-shadow: 10px 10px 0 0 #fff;
+      }
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: $bg-primary;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 50%;
+        transform: translateY(100%);
+        box-shadow: 10px -10px 0 0 #fff;
+      }
+    }
+  }
+}
+
+#loading {
+  background-color: #131933;
+  padding: 5rem 0;
+  .loading {
+    margin: auto;
+    width: 7rem;
+    height: 7rem;
+    position: relative;
+    @for $i from 0 to 8 {
+      .item-#{$i + 1} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate($i * 45deg);
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 20px;
+          border: 5px solid #00aefd;
+          border-radius: 5rem;
+          filter: hue-rotate($i * 45deg);
+          animation: loading 2s infinite;
+          animation-delay: calc($i * 0.25s);
+          animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  to {
+    transform: scale(0);
+    // opacity: 0;
   }
 }

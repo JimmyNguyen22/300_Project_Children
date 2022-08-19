@@ -376,7 +376,6 @@ body {
 }
 
 .keycode {
-  height: 80vh;
   padding: 100px;
   background-color: #17a2b8;
   color: #fff;
@@ -426,4 +425,313 @@ body {
 .keycode .keycode-box .keycode-detail .keycode-card p:first-child {
   background-color: #78c0c9;
   color: #fff;
+}
+.keycode .hide-key {
+  display: none;
+}
+
+.search-tag {
+  background-color: #8cc84c;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-tag .search-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+}
+.search-tag .search-card .search-title {
+  font-size: 2rem;
+}
+.search-tag .search-card .search-content {
+  border: 1px solid #888;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.search-tag .search-card .search-content .search-list {
+  background-color: #8cc84c;
+  color: #fff;
+  border-radius: 3px;
+  list-style: none;
+  margin: 4px 3px;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.search-tag .search-card .search-content .search-list i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.search-tag .search-card .search-content .search-input {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  margin: 10px;
+  flex: 1;
+}
+.search-tag .search-card .search-btn-remove {
+  background-color: #8cc84c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: all 0.25s;
+}
+.search-tag .search-card .search-btn-remove:hover {
+  background: #7cac49;
+}
+
+.curve-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.curve-bg .menu {
+  background-color: #de4b3e;
+  padding: 50px 15px;
+  border-radius: 15px;
+  width: 400px;
+  margin: 3rem;
+  color: #fff;
+  font-size: 3rem;
+  padding-right: 0;
+}
+.curve-bg .menu .menu-item {
+  padding: 15px;
+  border-radius: 15px 0 0 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 10px;
+}
+.curve-bg .menu .menu-item .menu-text {
+  margin-left: 10px;
+}
+.curve-bg .menu .active {
+  background-color: #fff;
+  color: #de4b3e;
+}
+.curve-bg .menu .active::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #de4b3e;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  transform: translateY(-100%);
+  box-shadow: 10px 10px 0 0 #fff;
+}
+.curve-bg .menu .active::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #de4b3e;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  transform: translateY(100%);
+  box-shadow: 10px -10px 0 0 #fff;
+}
+
+#loading {
+  background-color: #131933;
+  padding: 5rem 0;
+}
+#loading .loading {
+  margin: auto;
+  width: 7rem;
+  height: 7rem;
+  position: relative;
+}
+#loading .loading .item-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+}
+#loading .loading .item-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(0deg);
+  animation: loading 2s infinite;
+  animation-delay: 0s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+}
+#loading .loading .item-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(45deg);
+  animation: loading 2s infinite;
+  animation-delay: 0.25s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(90deg);
+}
+#loading .loading .item-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(90deg);
+  animation: loading 2s infinite;
+  animation-delay: 0.5s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(135deg);
+}
+#loading .loading .item-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(135deg);
+  animation: loading 2s infinite;
+  animation-delay: 0.75s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+#loading .loading .item-5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(180deg);
+  animation: loading 2s infinite;
+  animation-delay: 1s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(225deg);
+}
+#loading .loading .item-6::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(225deg);
+  animation: loading 2s infinite;
+  animation-delay: 1.25s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-7 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(270deg);
+}
+#loading .loading .item-7::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(270deg);
+  animation: loading 2s infinite;
+  animation-delay: 1.5s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#loading .loading .item-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(315deg);
+}
+#loading .loading .item-8::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #00aefd;
+  border-radius: 5rem;
+  filter: hue-rotate(315deg);
+  animation: loading 2s infinite;
+  animation-delay: 1.75s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes loading {
+  to {
+    transform: scale(0);
+  }
 }
