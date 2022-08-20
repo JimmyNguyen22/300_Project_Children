@@ -615,3 +615,78 @@ body {
     // opacity: 0;
   }
 }
+
+// form'
+$bg-c1: #2691d9;
+$bg-c2: #e74c3c;
+.form {
+  padding: 5rem;
+  background: linear-gradient(120deg, #3ca7ee, #9b408f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-item {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #fff;
+    .form-control {
+      position: relative;
+      border: none;
+      margin-top: 40px;
+      text-align: left;
+      input {
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 40px;
+        font-size: 2rem;
+        border-bottom: 2px solid #adadad;
+        &:focus ~ span {
+          width: 96%;
+        }
+      }
+      span {
+        position: absolute;
+        border-bottom: 3px solid $bg-c1;
+        left: 7px;
+        top: 41.5px;
+        width: 0;
+        transition: 0.25s;
+      }
+    }
+    .error {
+      input {
+        border-bottom: 2px solid $bg-c2;
+      }
+      small {
+        color: $bg-c2;
+        font-size: 1.5rem;
+      }
+    }
+    .form-btn {
+      width: 100%;
+      height: 50px;
+      border-radius: 25px;
+      border: none;
+      margin: 30px 0 25px 0;
+      font-size: 2rem;
+      font-weight: bold;
+      background-color: $bg-c1;
+      color: #fff;
+      &:hover {
+        background-color: #08609a;
+      }
+    }
+    .sign-up {
+      font-size: 2rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

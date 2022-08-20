@@ -735,3 +735,72 @@ body {
     transform: scale(0);
   }
 }
+.form {
+  padding: 5rem;
+  background: linear-gradient(120deg, #3ca7ee, #9b408f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form .form-item {
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: #fff;
+}
+.form .form-item .form-control {
+  position: relative;
+  border: none;
+  margin-top: 40px;
+  text-align: left;
+}
+.form .form-item .form-control input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 40px;
+  font-size: 2rem;
+  border-bottom: 2px solid #adadad;
+}
+.form .form-item .form-control input:focus ~ span {
+  width: 96%;
+}
+.form .form-item .form-control span {
+  position: absolute;
+  border-bottom: 3px solid #2691d9;
+  left: 7px;
+  top: 41.5px;
+  width: 0;
+  transition: 0.25s;
+}
+.form .form-item .error input {
+  border-bottom: 2px solid #e74c3c;
+}
+.form .form-item .error small {
+  color: #e74c3c;
+  font-size: 1.5rem;
+}
+.form .form-item .form-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  margin: 30px 0 25px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #2691d9;
+  color: #fff;
+}
+.form .form-item .form-btn:hover {
+  background-color: #08609a;
+}
+.form .form-item .sign-up {
+  font-size: 2rem;
+}
+.form .form-item .sign-up a {
+  text-decoration: none;
+}
+.form .form-item .sign-up a:hover {
+  text-decoration: underline;
+}

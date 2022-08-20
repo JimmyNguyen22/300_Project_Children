@@ -157,3 +157,39 @@ menuItem.forEach((item) =>
     item.classList.add("active");
   })
 );
+
+// form validation
+let user = document.querySelector("#user");
+let email = document.querySelector("#email");
+let password = document.querySelector("#password");
+let confirmPass = document.querySelector("#confirmPass");
+let form = document.querySelector("#form");
+function formError(input, message) {
+  let parent = input.parentElement;
+  let small = parent.querySelector("small");
+  parent.classList.add("error");
+  small.innerText = message;
+}
+
+function formSuccess(input) {
+  let parent = input.parentElement;
+  let small = parent.querySelector("small");
+  parent.classList.remove("error");
+  small.innerText = "";
+}
+
+function checkError(listInput) {
+  listInput.forEach((input) => {
+    input.value = input.value.trim();
+    if (!input.value) {
+      formError(input, "ko duoc trong");
+    } else {
+      formSuccess(input);
+    }
+  });
+}
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  checkError([user, email, password, confirmPass]);
+});
