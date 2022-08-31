@@ -210,3 +210,66 @@ function changeWeatherUI() {
   let apiURL =
     "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=430fa03fff96eccb022c5230ec54916c";
 }
+
+// todolist
+let todoList = document.querySelector("#todoList");
+let btnTodoList = document.querySelector("#btnTodoList");
+let formTodo = document.querySelector("#formTodo");
+let todos = document.querySelector(".list-todo");
+
+formTodo.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let val = todoList.value.trim();
+  if (val) {
+    addTodoElement({
+      text: val,
+    });
+    luuLocalStorage();
+  }
+  todoList.value = "";
+});
+
+function addTodoElement(todo) {
+  let li = document.createElement("li");
+  li.innerHTML = `
+  <span>${todo.text}</span>
+                    <i class="fa fa-trash"></i>
+  `;
+  if (todo.status === "todo-done") {
+    li.setAttribute("class", "todo-done");
+  }
+
+  li.addEventListener("click", function () {
+    this.classList.toggle("todo-done");
+    luuLocalStorage();
+  });
+
+  li.querySelector("i").addEventListener("click", function () {
+    this.parentElement.remove();
+    luuLocalStorage();
+  });
+
+  todos.appendChild(li);
+}
+
+function luuLocalStorage() {
+  let todoList = document.querySelectorAll("li");
+  let todoStorage = [];
+  todoList.forEach(function (item) {
+    let text = item.querySelector("span").innerText;
+    let status = item.getAttribute("class");
+    todoStorage.push({
+      text,
+      status,
+    });
+  });
+  localStorage.setItem("todolist", JSON.stringify(todoStorage));
+}
+
+function layLocalStorage() {
+  let data = JSON.parse(localStorage.getItem("todolist"));
+  data.forEach(function (item) {
+    addTodoElement(item);
+  });
+}
+layLocalStorage();
