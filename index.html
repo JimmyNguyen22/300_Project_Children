@@ -219,40 +219,70 @@
             </form>
         </div>
     </section>
-    <section>
+    <!--  api -->
+    <section class="api-section">
         <div id="weather">
-            <input type="text" placeholder="Search..." class="input-search" />
-            <div class="content">
-                <h1 class="name">
-                    <span class="city"></span>
+            <input type="text" class="weather">
+            <div class="weather-content">
+                <h1 class="weather-title">
+                    <span class="city">Ha Noi</span>
                     <span>,</span>
-                    <span class="country"></span>
+                    <span class="country">VN</span>
                 </h1>
-                <p class="time"></p>
-                <div class="temperature">
-                    <span class="value"></span>
-                    <span><sup>o</sup>C</span>
+                <div class="weather-time">12/12/2022, 3:33:33 PM</div>
+                <div class="weather-box">
+                    <span class="weather-value">23 <sup>o</sup>C</span>
                 </div>
-                <div class="short-desc"></div>
-                <div class="more-desc">
-                    <div class="visibility">
-                        <i class="far fa-eye"></i>
-                        <span></span>
+                <div class="weather-bot">Clouds</div>
+                <div class="weather-foot">
+                    <div class="weather-item eye">
+                        <i class="fa fa-eye"></i>
+                        <span>1000m</span>
                     </div>
-                    <div class="wind">
-                        <i class="fas fa-wind"></i>
-                        <span></span>
+                    <div class="weather-item wind">
+                        <i class="fa fa-spinner"></i>
+                        <span>1000m</span>
                     </div>
-                    <div class="cloud">
-                        <i class="fas fa-cloud-sun"></i>
-                        <span></span>
+                    <div class="weather-item sun">
+                        <i class="fa fa-sun"></i>
+                        <span>1000m</span>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
-
+    <!--  to do list -->
+    <section class="todo">
+        <div class="container todo-list">
+            <form id="formTodo">
+                <input id="todoList" type="text" placeholder="Thêm danh sách">
+                <button id="btnTodoList" class="btn-todo" type="submit">Add</button>
+            </form>
+            <ul class="list-todo"> </ul>
+        </div>
+    </section>
+    <!-- Toast Notification Animation -->
+    <div class="control">
+        <button class="success">Show Success</button>
+        <button class="warning">Show Warning</button>
+        <button class="error">Show Error</button>
+        <div class="box-warn success">
+            <i class="far fa-check-circle"></i>
+            <span class="message">This is a success message.</span>
+            <span class="border-box success"></span>
+        </div>
+        <div class="box-warn warning">
+            <i class="fa fa-exclamation-circle"></i>
+            <span class="message">This is a warning message!</span>
+            <span class="border-box warning"></span>
+        </div>
+        <div class="box-warn error">
+            <i class="fa fa-exclamation-triangle"></i>
+            <span class="message">This is a error message!</span>
+            <span class="border-box error"></span>
+        </div>
+    </div>
+    <!--  slide show -->
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"

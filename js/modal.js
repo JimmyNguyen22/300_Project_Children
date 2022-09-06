@@ -273,3 +273,38 @@ function layLocalStorage() {
   });
 }
 layLocalStorage();
+
+//   Toast Notification Animation
+let btnSuccess = document.querySelector(".control .success");
+let btnWarning = document.querySelector(".control .warning");
+let btnError = document.querySelector(".control .error");
+
+btnSuccess.addEventListener("click", () => {});
+
+function createBox(status) {
+  /* 
+  <div class="box-warn success">
+  <i class="far fa-check-circle"></i>
+  <span class="message">This is a success message.</span>
+  <span class="border-box success"></span>
+</div>
+<div class="box-warn warning">
+  <i class="fa fa-exclamation-circle"></i>
+  <span class="message">This is a warning message!</span>
+  <span class="border-box warning"></span>
+</div>
+<div class="box-warn error">
+  <i class="fa fa-exclamation-triangle"></i>
+  <span class="message">This is a error message!</span>
+  <span class="border-box error"></span>
+</div> */
+  let box = document.createElement("div");
+  box.classList.add("box-warn");
+  box.innerHTML = `
+  <i class="far fa-check-circle"></i>
+  <span class="message">This is a success message.</span>
+  <span class="border-box success"></span>`;
+
+  let boxList = document.querySelector(".box-warn");
+  boxList.appendChild(box);
+}
