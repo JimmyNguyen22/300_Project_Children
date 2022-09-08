@@ -36,6 +36,9 @@
         <div class="search-btn">
             <i class="fa fa-search"></i>
         </div>
+        <div class="mobile-menu">
+            <i class="fa fa-bars"></i>
+        </div>
     </header>
     <section class="carousel">
         <div class="carousel-content">
@@ -161,9 +164,7 @@
             </div>
         </div>
     </section>
-    <section class=" slider">
-        <img src="./img/map.jpg" alt="...">
-    </section>
+    <img class="slider" src="./img/map.jpg" alt="...">
     <footer class="footer">
         <div class="footer-icon">
             <a href="">
@@ -184,7 +185,7 @@
         <p class="footer-text">Powered by Jimmy</p>
     </footer>
 
-    <div class="modal hide">
+    <div class="modal">
         <div class="modal-container">
             <div class="modal-header">
                 <i class="fa fa-suitcase "></i>
@@ -239,6 +240,29 @@
         modalContainer.addEventListener('click', function (event) {
             event.stopPropagation();
         });
+        // mobile-menu
+        let header = document.querySelector('header');
+        let menuMobile = document.querySelector('.mobile-menu');
+        let headerHeight = header.clientHeight;
+        menuMobile.onclick = () => {
+            let close = header.clientHeight === headerHeight ? header.style.height = 'auto' : header.style.height = null;
+        }
+
+        // tự động đóng khi chọn menu
+        let menuItems = document.querySelectorAll('.navbar li a[href*="#"]');
+        for (let i = 0; i < menuItems.length; i++) {
+            let menuItem = menuItems[i];
+
+            menuItem.onclick = function (event) {
+                let parentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('drop-down');
+
+                if (parentMenu) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null
+                }
+            }
+        }
 
     </script>
 </body>

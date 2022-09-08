@@ -9,7 +9,8 @@ html {
 }
 
 header {
-  height: 46px;
+  $height: 46px;
+  height: $height;
   background-color: #000;
   display: flex;
   justify-content: space-between;
@@ -18,12 +19,25 @@ header {
   top: 0;
   left: 0;
   right: 0;
-
+  @media (max-width: 767px) {
+    overflow: hidden;
+  }
   .navbar {
     display: inline-block;
+    @media (max-width: 767px) {
+      width: 100%;
+      display: block;
+    }
+    li:first-child {
+      display: inline-block;
+    }
     li {
       display: inline-block;
       position: relative;
+
+      @media only screen and(max-width: 767px) {
+        display: block;
+      }
       &:hover {
         background-color: #ccc;
       }
@@ -35,6 +49,10 @@ header {
         text-decoration: none;
         line-height: 46px;
         padding: 12px 24px;
+        @media (max-width: 767px) {
+          display: block;
+          padding: 0 24px;
+        }
         &:hover {
           color: #000;
         }
@@ -47,17 +65,27 @@ header {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         display: none;
         min-width: 160px;
+        @media (max-width: 767px) {
+          position: initial;
+          background-color: #333;
+        }
         li {
           width: 100%;
           a {
             color: #000;
             padding: 12px 14px;
+            @media (max-width: 767px) {
+              color: #fff;
+              padding: 0 32px;
+            }
           }
         }
       }
     }
   }
-  .search-btn {
+  .search-btn,
+  .mobile-menu {
+    height: $height;
     &:hover {
       background-color: red;
     }
@@ -68,7 +96,19 @@ header {
       cursor: pointer;
     }
   }
+  .mobile-menu {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  .search-btn {
+    @media only screen and(max-width: 767px) {
+      display: none;
+    }
+  }
 }
+
 .carousel {
   position: relative;
   margin-top: 46px;
@@ -94,6 +134,7 @@ header {
 .content {
   margin: auto;
   width: 800px;
+  max-width: 100%;
   .content-section {
     text-align: center;
     padding: 64px 16px;
@@ -114,6 +155,9 @@ header {
       line-height: 1.5;
       font-size: 15px;
       margin: 15px 0;
+      @media (max-width: 767px) {
+        font-size: initial;
+      }
     }
     .content-list {
       padding: 32px 0 32px;
@@ -127,19 +171,32 @@ header {
           border-radius: 5px;
         }
       }
+
+      @media (max-width: 767px) {
+        display: initial;
+        .content-item {
+          padding-bottom: 15px;
+          img {
+            width: 50%;
+          }
+        }
+      }
     }
   }
 }
+
 .about-section {
   background-color: #000;
   text-align: center;
   color: #fff;
-  padding-bottom: 80px;
+  padding: 0 16px 80px;
   .container {
     width: 800px;
+    max-width: 100%;
     margin: auto;
     .about {
       width: 800px;
+      max-width: 100%;
       padding: 64px 16px;
       margin: 0 auto;
       .content-title {
@@ -156,7 +213,8 @@ header {
     }
     ul {
       background-color: #fff;
-      width: 768px;
+      width: 767px;
+      max-width: 100%;
       margin: auto;
       color: #757575;
       list-style: none;
@@ -181,13 +239,13 @@ header {
       }
     }
     .about-list {
-      padding: 32px 8px;
+      padding: 16px 8px;
       display: flex;
       .about-item {
         background-color: #fff;
         width: calc(100% / 3);
         color: #000;
-        margin: 0 8px;
+        margin: 16px 8px;
         text-align: left;
         img {
           width: 100%;
@@ -222,12 +280,16 @@ header {
           }
         }
       }
+      @media (max-width: 767px) {
+        margin: 0 -16px;
+        display: initial;
+        .about-item {
+          width: initial;
+          margin: 16px 0;
+        }
+      }
     }
   }
-}
-.slider {
-}
-footer {
 }
 
 .modal {
@@ -321,6 +383,7 @@ footer {
 
 .contact {
   width: 800px;
+  max-width: 100%;
   padding: 64px 16px;
   text-align: center;
   margin: auto;
@@ -338,8 +401,8 @@ footer {
   .contact-item {
     padding: 32px 0;
     display: flex;
+    justify-content: space-between;
     .contact-left {
-      width: 50%;
       margin-bottom: 16px;
       font-size: 18px;
       text-align: left;
@@ -350,6 +413,12 @@ footer {
         }
       }
     }
+    @media (max-width: 767px) {
+      display: initial;
+      .contact-left {
+        width: initial;
+      }
+    }
     .contact-right {
       form {
         text-align: right;
@@ -358,8 +427,10 @@ footer {
           margin: 0 -16px 8px;
           padding: 0 8px;
           .col {
+            width: 100%;
             padding: 0px 8px;
             .form-control {
+              width: 100%;
               padding: 8px;
             }
           }
@@ -389,11 +460,9 @@ footer {
 }
 
 .slider {
-  height: 855px;
-  img {
-    width: 100%;
-    filter: grayscale(50%);
-  }
+  width: 100%;
+  filter: grayscale(50%);
+  margin-bottom: -4px;
 }
 
 .footer {
