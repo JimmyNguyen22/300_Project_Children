@@ -938,63 +938,46 @@ body {
 }
 
 .control {
-  padding: 300px 0 100px;
-  height: 500px;
-  background: linear-gradient(255deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%);
+  padding: 200px 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 .control .success {
-  background-color: green;
+  background-color: #71be34;
 }
 .control .warning {
-  background-color: orange;
+  background-color: #ffb702;
 }
 .control .error {
-  background-color: red;
+  background-color: #ff623d;
 }
 .control button {
   padding: 10px 16px;
   margin: 0 8px;
-  border-radius: 5px;
+  border-radius: 50px;
   border: none;
   font-size: 20px;
   color: #fff;
 }
 .control button:hover {
-  opacity: 0.7;
+  opacity: 0.8;
   box-shadow: 0px 0px 17px #ccc;
 }
-.control .box-warn {
+.control #toast {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+.control #toast .toastt {
   font-size: 25px;
   padding: 20px;
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.929);
   text-align: left;
-  overflow: hidden;
   width: 370px;
-  animation: slide_show 2s ease forwards;
+  transition: all 0.3s linear;
 }
-.control .box-warn.success {
-  background: rgba(0, 128, 0, 0.4);
-  border-left: 4px solid green;
-}
-.control .box-warn.warning {
-  margin-top: 100px;
-  background: rgba(126, 128, 0, 0.4);
-  border-left: 4px solid orange;
-}
-.control .box-warn.error {
-  margin-top: 200px;
-  background: rgba(128, 32, 0, 0.4);
-  border-left: 4px solid red;
-}
-.control .border-box {
+.control #toast .toastt .border-box {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1002,25 +985,19 @@ body {
   width: 100%;
   animation: countdown 3s ease forwards;
 }
-.control .border-box.success {
+.control #toast .toastt .border-box.success {
   background: green;
 }
-.control .border-box.warning {
+.control #toast .toastt .border-box.warning {
   background: orange;
 }
-.control .border-box.error {
+.control #toast .toastt .border-box.error {
   background: red;
 }
-
-@keyframes countdown {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0%;
-  }
+.control #toast .toastt + .toastt {
+  margin-top: 10px;
 }
-@keyframes slide_show {
+@keyframes slideInLeft {
   0% {
     transform: translateX(100%);
   }
@@ -1034,7 +1011,7 @@ body {
     transform: translateX(-10px);
   }
 }
-@keyframes slide_hide {
+@keyframes fadeOut {
   0% {
     transform: translateX(-10%);
   }
@@ -1046,5 +1023,26 @@ body {
   }
   100% {
     transform: translateX(200%);
+  }
+}
+.control #toast .toastt.success {
+  background: rgba(0, 128, 0, 0.4);
+  border-left: 4px solid green;
+}
+.control #toast .toastt.warning {
+  background: rgba(126, 128, 0, 0.4);
+  border-left: 4px solid orange;
+}
+.control #toast .toastt.error {
+  background: rgba(128, 32, 0, 0.4);
+  border-left: 4px solid red;
+}
+
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
   }
 }

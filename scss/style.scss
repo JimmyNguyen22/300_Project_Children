@@ -836,82 +836,107 @@ $bg-c2: #e74c3c;
 }
 
 .control {
-  padding: 300px 0 100px;
-  height: 500px;
-  background: linear-gradient(
-    255deg,
-    rgb(65, 88, 208) 0%,
-    rgb(200, 80, 192) 50%,
-    rgb(255, 204, 112) 100%
-  );
+  padding: 200px 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+
   .success {
-    background-color: green;
+    background-color: #71be34;
   }
   .warning {
-    background-color: orange;
+    background-color: #ffb702;
   }
   .error {
-    background-color: red;
+    background-color: #ff623d;
   }
   button {
     padding: 10px 16px;
     margin: 0 8px;
-    border-radius: 5px;
+    border-radius: 50px;
     border: none;
     font-size: 20px;
     color: #fff;
     &:hover {
-      opacity: 0.7;
+      opacity: 0.8;
       box-shadow: 0px 0px 17px #ccc;
     }
   }
-  .box-warn {
+
+  #toast {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 25px;
-    padding: 20px;
-    border-radius: 5px;
-    color: rgba(255, 255, 255, 0.929);
-    text-align: left;
-    overflow: hidden;
-    width: 370px;
-    animation: slide_show 2s ease forwards;
-  }
-  .box-warn.success {
-    background: rgba(0, 128, 0, 0.4);
-    border-left: 4px solid green;
-  }
-  .box-warn.warning {
-    margin-top: 100px;
-    background: rgba(126, 128, 0, 0.4);
-    border-left: 4px solid orange;
-  }
-  .box-warn.error {
-    margin-top: 200px;
-    background: rgba(128, 32, 0, 0.4);
-    border-left: 4px solid red;
-  }
-  .border-box {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    animation: countdown 3s ease forwards;
-  }
-  .border-box.success {
-    background: green;
-  }
-  .border-box.warning {
-    background: orange;
-  }
-  .border-box.error {
-    background: red;
+    .toastt {
+      font-size: 25px;
+      padding: 20px;
+      border-radius: 5px;
+      color: rgba(255, 255, 255, 0.929);
+      text-align: left;
+      width: 370px;
+      transition: all 0.3s linear;
+      .border-box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        animation: countdown 3s ease forwards;
+      }
+      .border-box.success {
+        background: green;
+      }
+      .border-box.warning {
+        background: orange;
+      }
+      .border-box.error {
+        background: red;
+      }
+    }
+    .toastt + .toastt {
+      margin-top: 10px;
+    }
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      25% {
+        transform: translateX(-10%);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-10px);
+      }
+    }
+
+    @keyframes fadeOut {
+      0% {
+        transform: translateX(-10%);
+      }
+      25% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+    }
+
+    .toastt.success {
+      background: rgba(0, 128, 0, 0.4);
+      border-left: 4px solid green;
+    }
+    .toastt.warning {
+      background: rgba(126, 128, 0, 0.4);
+      border-left: 4px solid orange;
+    }
+    .toastt.error {
+      background: rgba(128, 32, 0, 0.4);
+      border-left: 4px solid red;
+    }
   }
 }
 
@@ -923,35 +948,4 @@ $bg-c2: #e74c3c;
     width: 0%;
   }
 }
-
-@keyframes slide_show {
-  0% {
-    transform: translateX(100%);
-  }
-  25% {
-    transform: translateX(-10%);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-10px);
-  }
-}
-
-@keyframes slide_hide {
-  0% {
-    transform: translateX(-10%);
-  }
-  25% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(200%);
-  }
-}
-
 // slide_show

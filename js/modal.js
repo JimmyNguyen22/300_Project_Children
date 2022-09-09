@@ -275,36 +275,54 @@ function layLocalStorage() {
 layLocalStorage();
 
 //   Toast Notification Animation
-let btnSuccess = document.querySelector(".control .success");
-let btnWarning = document.querySelector(".control .warning");
-let btnError = document.querySelector(".control .error");
 
-btnSuccess.addEventListener("click", () => {});
+function toast({ message = "", type = "", duration = 3000 }) {
+  const main = document.querySelector("#toast");
+  if (main) {
+    const toast = document.createElement("div");
+    const icons = {
+      success: "far fa-check-circle",
+      warning: "fa fa-exclamation-circle",
+      error: "fa fa-exclamation-triangle",
+    };
+    const icon = icons[type];
+    const delay = (duration / 1000).toFixed(2);
 
-function createBox(status) {
-  /* 
-  <div class="box-warn success">
-  <i class="far fa-check-circle"></i>
-  <span class="message">This is a success message.</span>
-  <span class="border-box success"></span>
-</div>
-<div class="box-warn warning">
-  <i class="fa fa-exclamation-circle"></i>
-  <span class="message">This is a warning message!</span>
-  <span class="border-box warning"></span>
-</div>
-<div class="box-warn error">
-  <i class="fa fa-exclamation-triangle"></i>
-  <span class="message">This is a error message!</span>
-  <span class="border-box error"></span>
-</div> */
-  let box = document.createElement("div");
-  box.classList.add("box-warn");
-  box.innerHTML = `
-  <i class="far fa-check-circle"></i>
-  <span class="message">This is a success message.</span>
-  <span class="border-box success"></span>`;
+    toast.classList.add("toastt", `${type}`);
 
-  let boxList = document.querySelector(".box-warn");
-  boxList.appendChild(box);
+    toast.style.animation = `slideInLeft 3s ease, fadeOut 1s ${delay}s linear forwards`;
+
+    toast.innerHTML = ` <i class="${icon}"></i>
+    <span class="message">${message}</span>
+    <span class="border-box ${type} "></span> `;
+    main.appendChild(toast);
+
+    setTimeout(function () {
+      main.removeChild(toast);
+    }, duration + 1000);
+  }
+}
+
+function showSuccess() {
+  toast({
+    message: "This is a success message.",
+    type: "success",
+    duration: 3000,
+  });
+}
+
+function showWarning() {
+  toast({
+    message: "This is a warning message!",
+    type: "warning",
+    duration: 3000,
+  });
+}
+
+function showError() {
+  toast({
+    message: "This is a error message!",
+    type: "error",
+    duration: 3000,
+  });
 }
