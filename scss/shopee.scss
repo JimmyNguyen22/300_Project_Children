@@ -1,8 +1,9 @@
-* {
-  box-sizing: border-box;
-}
+/*
+folder base chứa các mục scss dùng chung tất cả các page của project *{}
+folder
+file _variable chứa tất cả biến và mixin
+_index.scss import tat ca
+style.scss import _index
+*/
 
-html {
-  font-size: 62.5%;
-  line-height: 1.6rem;
-}
+@import "./pages/index";

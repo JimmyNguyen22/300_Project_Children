@@ -1,0 +1,52 @@
+// Khai báo biến
+
+// bg
+
+$bg-c1-primary: rgb(42, 115, 221);
+$bg-c1-secondary: rgb(245, 249, 254);
+$bg-c2-secondary: #fff;
+$bg-none: rgba(0, 0, 0, 0);
+
+// text-color
+
+$text-white: #fff;
+$text-black: #000;
+$text-dark: #333;
+
+// text-size
+
+$text-s: 1rem;
+$text-base: 1.6rem;
+$text-xl: 1.8rem;
+$text-2xl: 2rem;
+$text-3xl: 3rem;
+$text-4xl: 4rem;
+$text-5xl: 5rem;
+$text-6xl: 6rem;
+
+// font-weight
+
+$text-light: 300;
+$text-regular: 400;
+$text-semibold: 600;
+$text-bold: 700;
+
+// mixin: Hàm trong scss
+
+@mixin text($fs: $text-base, $fw: $text-regular, $c: $text-c1-dark) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $c;
+}
+
+@mixin button($fs-btn, $fw, $c, $bg, $pd, $bd, $br, $bg-hover, $c-hover) {
+  @include text($fs-btn, $fw, $c);
+  background: $bg;
+  padding: $pd;
+  border: $bd;
+  border-radius: $br;
+  &:hover {
+    background: $bg-hover;
+    color: $c-hover;
+  }
+}
