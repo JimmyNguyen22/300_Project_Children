@@ -7,7 +7,7 @@
     .navbar_list {
       .navbar_item {
         display: inline-block;
-        font-size: $text-base;
+        font-size: $text-l;
         color: $text-white;
         margin: 1rem 8px;
         position: relative;
@@ -19,9 +19,11 @@
           color: rgba(255, 255, 255, 0.7);
           cursor: pointer;
         }
+
         .navbar_link {
           position: relative;
           margin-left: 14px;
+
           i {
             position: absolute;
             top: 0;
@@ -29,11 +31,122 @@
             font-size: $text-2xl;
           }
         }
+
+        .navbar-notification {
+          position: absolute;
+          top: 222%;
+          right: 0;
+          width: 404px;
+          border: 1px solid $bg-gray;
+          background-color: $bg-white;
+          border-radius: 2px;
+          transform-origin: calc(100% - 20px) top;
+          animation: navbarNotify ease-in 0.2s;
+          will-change: opacity, transform; // trình duyệt sẽ tối ưu 2 chuyển động này hơn
+          display: none;
+
+          &::before {
+            content: "";
+            border: 13px solid;
+            border-color: transparent transparent $bg-white transparent;
+            position: absolute;
+            right: 12px;
+            top: -26px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100px;
+            height: 22px;
+            right: 0;
+            top: -20px;
+          }
+
+          .notify-header {
+            height: 40px;
+            h3 {
+              cursor: default;
+              user-select: none;
+              color: $text-gray;
+              line-height: 40px;
+              margin-left: 12px;
+            }
+          }
+          .notify-list {
+            background-color: rgba(238, 77, 45, 0.1);
+            .notify-item {
+              &:hover {
+                background-color: $bg-gray;
+              }
+              .notify-link {
+                display: flex;
+                align-items: center;
+                color: $text-dark;
+                margin-left: 12px;
+                .notify-img {
+                  width: 48px;
+                }
+                .notify-info {
+                  margin-left: 12px;
+                  .notify-name {
+                    display: block;
+                    margin-bottom: 3px;
+                  }
+                  .notify-desc {
+                    font-size: $text-s;
+                    color: $text-gray;
+                  }
+                }
+              }
+            }
+          }
+          .notify-footer {
+            text-align: center;
+            color: $text-gray;
+            padding: 10px;
+            display: block;
+          }
+        }
+        @keyframes navbarNotify {
+          from {
+            opacity: 0;
+            transform: scale(0);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
       }
       .text-semibold {
         font-weight: $text-semibold;
       }
       .navbar_border {
+        .navbar-img {
+          width: 186px;
+          background-color: $bg-white;
+          position: absolute;
+          left: 0;
+          top: 140%;
+          padding: 8px;
+          border-radius: 2px;
+          display: none;
+          animation: fadeIn ease-in 0.3s;
+          .navbar-qr {
+            width: 100%;
+          }
+          .navbar-app {
+            display: flex;
+            justify-content: space-around;
+            img {
+              height: 15px;
+            }
+          }
+        }
+        &:hover .navbar-img {
+          display: block;
+        }
         &:before {
           content: "";
           display: block;
@@ -43,6 +156,78 @@
           height: 16px;
           border-left: 1px solid #fb9086;
         }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 81%;
+          left: 0;
+          height: 16px;
+        }
+      }
+      .navbar_show {
+        &:hover .navbar-notification {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.auth-form {
+  width: 500px;
+  .form-container {
+    padding: 32px;
+    .form-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      .form-title {
+        font-size: 2.2rem;
+        font-weight: $text-semibold;
+      }
+      .form-switch-btn {
+        font-size: 1.6rem;
+        color: $text-primary;
+        font-weight: $text-semibold;
+        cursor: pointer;
+      }
+    }
+    .form-body {
+      .form-group {
+        .form-control {
+          width: 100%;
+          height: 40px;
+          margin-bottom: 16px;
+          padding-left: 12px;
+          font-size: $text-m;
+          border: 1px solid $bg-gray;
+          outline: none;
+          &:focus {
+            border-color: #888;
+          }
+        }
+      }
+    }
+    .form-text {
+      .form-policy {
+        line-height: 1.6rem;
+        text-align: center;
+        padding: 0 8px;
+        @include text($text-s, $text-semibold, $text-black);
+        .policy-link {
+          color: $text-primary;
+        }
+      }
+    }
+    .form-btn {
+      margin-top: 80px;
+    }
+  }
+  .form-social {
+    .btn-icon {
+      i {
       }
     }
   }

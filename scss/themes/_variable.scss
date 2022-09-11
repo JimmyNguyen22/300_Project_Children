@@ -2,21 +2,25 @@
 
 // bg
 
-$bg-c1-primary: rgb(42, 115, 221);
+$bg-c1-primary: #ee4d2d;
 $bg-c1-secondary: rgb(245, 249, 254);
-$bg-c2-secondary: #fff;
-$bg-none: rgba(0, 0, 0, 0);
+$bg-white: #fff;
+$bg-black: #000;
+$bg-gray: #ddd;
 
 // text-color
 
+$text-primary: #ee4d2d;
 $text-white: #fff;
 $text-black: #000;
 $text-dark: #333;
+$text-gray: #aaa;
 
 // text-size
 
-$text-s: 1rem;
-$text-base: 1.6rem;
+$text-s: 1.2rem;
+$text-m: 1.4rem;
+$text-l: 1.6rem;
 $text-xl: 1.8rem;
 $text-2xl: 2rem;
 $text-3xl: 3rem;
@@ -33,7 +37,7 @@ $text-bold: 700;
 
 // mixin: Hàm trong scss
 
-@mixin text($fs: $text-base, $fw: $text-regular, $c: $text-c1-dark) {
+@mixin text($fs: $text-base, $fw: $text-regular, $c: $text-back) {
   font-size: $fs;
   font-weight: $fw;
   color: $c;

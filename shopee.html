@@ -24,7 +24,15 @@
             <div class="grid">
                 <nav class="navbar">
                     <ul class="navbar_list">
-                        <li class="navbar_item navbar_border">Vào cửa hàng trên ứng dụng</li>
+                        <li class="navbar_item navbar_border">Vào cửa hàng trên ứng dụng
+                            <div class="navbar-img">
+                                <img src="./img/qr.png" alt="QR code" class="navbar-qr">
+                                <div class="navbar-app">
+                                    <img src="./img/app.png" alt="">
+                                    <img src="./img/ggplay.png" alt="">
+                                </div>
+                            </div>
+                        </li>
                         <li class="navbar_item">
                             <span class="text-none">Kết nối </span>
                             <a href=""><i class='bx bxl-facebook-circle'></i></a>
@@ -32,10 +40,51 @@
                         </li>
                     </ul>
                     <ul class="navbar_list">
-                        <li class="navbar_item">
-                            <a class="navbar_link" href="">
+                        <li class="navbar_item navbar_show">
+                            <a class="navbar_link  " href="">
                                 <i class='bx bx-bell'></i>
-                                Thông báo</a>
+                                Thông báo
+                            </a>
+                            <div class="navbar-notification">
+                                <header class="notify-header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="notify-list">
+                                    <li class="notify-item">
+                                        <a href="" class="notify-link">
+                                            <img src="https://cf.shopee.vn/file/31234a27876fb89cd522d7e3db1ba5ca_tn"
+                                                alt="" class="notify-img">
+                                            <div class="notify-info">
+                                                <span class="notify-name">Mỹ phẫm Ohay chính hãng</span>
+                                                <span class="notify-desc">Mô tả mỹ phẫm Ohay chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify-item">
+                                        <a href="" class="notify-link">
+                                            <img src="https://cf.shopee.vn/file/31234a27876fb89cd522d7e3db1ba5ca_tn"
+                                                alt="" class="notify-img">
+                                            <div class="notify-info">
+                                                <span class="notify-name">Mỹ phẫm Ohay chính hãng</span>
+                                                <span class="notify-desc">Mô tả mỹ phẫm Ohay chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notify-item">
+                                        <a href="" class="notify-link">
+                                            <img src="https://cf.shopee.vn/file/31234a27876fb89cd522d7e3db1ba5ca_tn"
+                                                alt="" class="notify-img">
+                                            <div class="notify-info">
+                                                <span class="notify-name">Mỹ phẫm Ohay chính hãng</span>
+                                                <span class="notify-desc">Mô tả mỹ phẫm Ohay chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="notify-footer">
+                                    <a href=" ">Xem tất cả</a>
+                                </footer>
+                            </div>
                         </li>
                         <li class="navbar_item">
                             <a class="navbar_link" href="">
@@ -53,6 +102,58 @@
         <section class="container"></section>
 
         <footer class="footer"></footer>
+    </div>
+
+
+    <!--  modal -->
+    <div class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-body">
+            <div class="auth-form">
+                <div class="form-container">
+                    <div class="form-header">
+                        <span class="form-title">
+                            Đăng ký
+                        </span>
+                        <span class="form-switch-btn">
+                            Đăng nhập
+                        </span>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nhập email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Nhập mật khẩu" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Nhập lại mật khẩu" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-text">
+                        <p class="form-policy">
+                            Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                            <a href="" class="policy-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="policy-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <div class="form-btn">
+                        <button class="btn">TRỞ LẠI</button>
+                        <button class="btn btn-primary">ĐĂNG KÝ </button>
+                    </div>
+                </div>
+                <div class="form-social">
+                    <a href="" class="btn btn-icon">
+                        <i class='bx bxl-facebook-square'></i>
+                        Kết nối Facebook
+                    </a>
+                    <a href="" class="btn btn-icon">
+                        <i class='bx bxl-google'></i>
+                        Kết nối Google
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
