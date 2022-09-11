@@ -326,3 +326,43 @@ function showError() {
     duration: 3000,
   });
 }
+
+// slide
+
+const imgFeature = document.querySelector(".img_feature");
+const listImg = document.querySelectorAll(".list_img img");
+const prevBtn = document.querySelector("#prev");
+const nextBtn = document.querySelector(".next");
+
+let currentImg = 0;
+
+function getImgByIndex(index) {
+  // remove active class
+  listImg.forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  currentImg = index;
+  imgFeature.src = listImg[index].getAttribute("src");
+  listImg[index].classList.add("active");
+}
+
+listImg.forEach((imgElement, index) => {
+  imgElement.addEventListener("click", () => {
+    getImgByIndex(index);
+  });
+});
+
+prevBtn.addEventListener("click", () => {
+  currentImg === 0 ? (currentImg = listImg.length - 1) : currentImg--;
+
+  getImgByIndex(currentImg);
+});
+
+nextBtn.addEventListener("click", (e) => {
+  currentImg === listImg.length - 1 ? (currentImg = 0) : currentImg++;
+
+  getImgByIndex(currentImg);
+});
+
+getImgByIndex(currentImg);
