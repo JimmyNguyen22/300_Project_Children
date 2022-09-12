@@ -40,6 +40,14 @@ html {
     opacity: 1;
   }
 }
+@keyframes growth {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .modal {
   position: fixed;
   top: 0;
@@ -47,6 +55,7 @@ html {
   bottom: 0;
   left: 0;
   display: flex;
+  animation: fadeIn linear 0.1s;
 }
 .modal .modal-overlay {
   position: absolute;
@@ -56,8 +65,7 @@ html {
 }
 .modal .modal-body {
   margin: auto;
-  background-color: #fff;
-  border-radius: 5px;
+  animation: growth linear 0.1s;
   position: relative;
   z-index: 1;
 }
@@ -67,11 +75,25 @@ html {
   border: none;
   border-radius: 3px;
   font-size: 1.4rem;
+  cursor: pointer;
+  background-color: #fff;
+}
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .btn.btn-primary {
   color: #fff;
   background-color: #ee4d2d;
+}
+
+.btn.btn-icon {
+  height: 32px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  width: calc(50% - 8px);
 }
 
 .header {
@@ -236,9 +258,11 @@ html {
 .header .navbar .navbar_list .navbar_show:hover .navbar-notification {
   display: block;
 }
-
 .auth-form {
   width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .auth-form .form-container {
   padding: 32px;
@@ -247,7 +271,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin: 0 8px 36px;
 }
 .auth-form .form-container .form-header .form-title {
   font-size: 2.2rem;
@@ -282,6 +306,49 @@ html {
 .auth-form .form-container .form-text .form-policy .policy-link {
   color: #ee4d2d;
 }
+.auth-form .form-container .form-text .form-help {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.auth-form .form-container .form-text .form-help .help-link:first-child {
+  color: #ee4d2d;
+  font-weight: 600;
+}
+.auth-form .form-container .form-text .form-help .help-link:last-child {
+  opacity: 0.5;
+}
+.auth-form .form-container .form-text .form-help .separate {
+  display: block;
+  border-left: 1px solid #eaeaea;
+  height: 22px;
+  margin: 0px 16px;
+}
 .auth-form .form-container .form-btn {
   margin-top: 80px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.auth-form .form-social {
+  background-color: #f5f5f5;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+}
+.auth-form .form-social .btn-icon i {
+  font-size: 2rem;
+  margin-right: 30px;
+}
+.auth-form .form-social .social-fb {
+  background-color: #3a5a98;
+  color: #fff;
+}
+.auth-form .form-social .social-gg {
+  background-color: #fff;
+  color: #000;
+}
+.auth-form .form-social .social-gg i {
+  color: #4285f4;
 }

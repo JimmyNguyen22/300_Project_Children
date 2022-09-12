@@ -33,6 +33,15 @@ html {
   }
 }
 
+@keyframes growth {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 // modal
 .modal {
   position: fixed;
@@ -41,6 +50,7 @@ html {
   bottom: 0;
   left: 0;
   display: flex;
+  animation: fadeIn linear 0.1s;
   .modal-overlay {
     position: absolute;
     width: 100%;
@@ -50,8 +60,7 @@ html {
 
   .modal-body {
     margin: auto;
-    background-color: $bg-white;
-    border-radius: 5px;
+    animation: growth linear 0.1s;
     position: relative;
     z-index: 1;
     .modal-inner {
@@ -67,9 +76,23 @@ html {
   border: none;
   border-radius: 3px;
   font-size: $text-m;
+  cursor: pointer;
+  background-color: $bg-white;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
 }
 
 .btn.btn-primary {
   color: $text-white;
   background-color: $bg-c1-primary;
+}
+
+.btn.btn-icon {
+  height: 32px;
+  font-size: $text-m;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  width: calc(50% - 8px);
 }

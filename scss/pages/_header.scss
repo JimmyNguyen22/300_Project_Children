@@ -172,17 +172,32 @@
       }
     }
   }
+
+  .header-search {
+    .header-logo {
+      .logo-img {
+      }
+    }
+    .search-input {
+    }
+
+    .header-cart {
+    }
+  }
 }
 
 .auth-form {
   width: 500px;
+  background-color: $bg-white;
+  border-radius: 5px;
+  overflow: hidden;
   .form-container {
     padding: 32px;
     .form-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 36px;
+      margin: 0 8px 36px;
       .form-title {
         font-size: 2.2rem;
         font-weight: $text-semibold;
@@ -220,14 +235,55 @@
           color: $text-primary;
         }
       }
+
+      .form-help {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: $text-m;
+        .help-link:first-child {
+          color: $text-primary;
+          font-weight: $text-semibold;
+        }
+        .help-link:last-child {
+          opacity: 0.5;
+        }
+        .separate {
+          display: block;
+          border-left: 1px solid #eaeaea;
+          height: 22px;
+          margin: 0px 16px;
+        }
+      }
     }
     .form-btn {
       margin-top: 80px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
     }
   }
+
   .form-social {
+    background-color: $bg-gray-secondary;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
     .btn-icon {
       i {
+        font-size: $text-2xl;
+        margin-right: 30px;
+      }
+    }
+    .social-fb {
+      background-color: #3a5a98;
+      color: $text-white;
+    }
+    .social-gg {
+      background-color: $bg-white;
+      color: $text-black;
+      i {
+        color: #4285f4;
       }
     }
   }
