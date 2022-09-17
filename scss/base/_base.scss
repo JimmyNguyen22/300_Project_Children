@@ -9,6 +9,8 @@ html {
   box-sizing: border-box;
 }
 
+//reponsive
+
 .grid {
   width: 1200px;
   max-width: 100%;
@@ -19,9 +21,29 @@ html {
   width: 100%;
 }
 
-.grid_row {
+.grid-row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+.col-2 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 16.66666%;
+}
+
+.col-2-4 {
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 20%;
+}
+
+.col-10 {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 83.3334%;
 }
 
 @keyframes fadeIn {
@@ -95,4 +117,59 @@ html {
   align-items: center;
   padding: 0 8px;
   width: calc(50% - 8px);
+}
+
+// selection
+.select-input {
+  position: relative;
+  min-width: 200px;
+  border-radius: 3px;
+  background-color: $bg-white;
+  height: 32px;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover .select-list {
+    display: block;
+  }
+  .select-list {
+    position: absolute;
+    z-index: 1;
+    top: 103%;
+    left: 0;
+    right: 0;
+    border-radius: 3px;
+    background-color: $bg-white;
+    padding: 8px 16px;
+    display: none;
+  }
+}
+
+// pagination
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $text-xl;
+  color: $text-gray;
+  .pagination-item {
+    border-radius: 3px;
+    margin: 0 12px;
+    .pagination-link {
+      min-width: 40px;
+      height: 30px;
+      display: block;
+      text-align: center;
+      line-height: 30px;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+  .pagination-active {
+    background-color: $bg-c1-primary;
+    color: $text-white;
+  }
 }

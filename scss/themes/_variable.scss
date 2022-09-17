@@ -3,6 +3,7 @@
 // bg
 
 $bg-c1-primary: #ee4d2d;
+$bg-c2-primary: #fb5533;
 $bg-c1-secondary: rgb(245, 249, 254);
 $bg-white: #fff;
 $bg-black: #000;
@@ -12,10 +13,13 @@ $bg-gray-secondary: #f5f5f5;
 // text-color
 
 $text-primary: #ee4d2d;
+$text-c1-primary: #fb5533;
 $text-white: #fff;
 $text-black: #000;
 $text-dark: #333;
 $text-gray: #aaa;
+$text-gray-secondary: #999;
+$text-secondary: #ffce3d;
 
 // text-size
 
@@ -35,6 +39,12 @@ $text-light: 300;
 $text-regular: 400;
 $text-semibold: 600;
 $text-bold: 700;
+
+// height
+
+$height-header: 120px;
+$height-navbar: 28px;
+$height-header-search: calc($height-header - $height-navbar);
 
 // mixin: Hàm trong scss
 
