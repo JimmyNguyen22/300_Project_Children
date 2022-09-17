@@ -1,0 +1,56 @@
+.footer {
+  border-top: 4px solid $bg-c1-primary;
+  padding-top: 36px;
+  font-size: $text-m;
+  .grid {
+    .grid-row {
+      .col-2-4 {
+        .footer-heading {
+          font-size: $text-l;
+          font-weight: $text-semibold;
+        }
+        .footer-list {
+          margin: 32px 0;
+          .footer-item {
+            margin-bottom: 16px;
+            .footer-link {
+              display: flex;
+              align-items: center;
+              &:hover {
+                color: $text-primary;
+              }
+              i {
+                font-size: $text-xl;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+      .col-2-4 {
+        .footer-heading {
+        }
+        .footer-download {
+          margin-top: 32px;
+          display: flex;
+          img {
+            width: 80px;
+          }
+          .download-app {
+            margin-left: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            a {
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    background-color: $bg-gray-secondary;
+    padding: 12px;
+    text-align: center;
+  }
+}

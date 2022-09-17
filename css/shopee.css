@@ -897,3 +897,48 @@ html {
 .app-container .grid .grid-row .col-10 .pagination-main {
   margin-top: 64px;
 }
+
+.footer {
+  border-top: 4px solid #ee4d2d;
+  padding-top: 36px;
+  font-size: 1.4rem;
+}
+.footer .grid .grid-row .col-2-4 .footer-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.footer .grid .grid-row .col-2-4 .footer-list {
+  margin: 32px 0;
+}
+.footer .grid .grid-row .col-2-4 .footer-list .footer-item {
+  margin-bottom: 16px;
+}
+.footer .grid .grid-row .col-2-4 .footer-list .footer-item .footer-link {
+  display: flex;
+  align-items: center;
+}
+.footer .grid .grid-row .col-2-4 .footer-list .footer-item .footer-link:hover {
+  color: #ee4d2d;
+}
+.footer .grid .grid-row .col-2-4 .footer-list .footer-item .footer-link i {
+  font-size: 1.8rem;
+  margin-right: 5px;
+}
+.footer .grid .grid-row .col-2-4 .footer-download {
+  margin-top: 32px;
+  display: flex;
+}
+.footer .grid .grid-row .col-2-4 .footer-download img {
+  width: 80px;
+}
+.footer .grid .grid-row .col-2-4 .footer-download .download-app {
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.footer .footer-bottom {
+  background-color: #f5f5f5;
+  padding: 12px;
+  text-align: center;
+}
