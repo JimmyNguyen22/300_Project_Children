@@ -1299,3 +1299,75 @@ body {
 .profile .card-profile .card-btn:hover {
   background-color: #f2726a;
 }
+
+.tab-ui {
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.tab-ui div {
+  margin: 5% auto 0;
+  max-width: 720px;
+}
+.tab-ui .tabs {
+  display: flex;
+  position: relative;
+}
+.tab-ui .tabs .tab-item {
+  min-width: 80px;
+  padding: 16px 20px 11px 20px;
+  font-size: 20px;
+  text-align: center;
+  color: #c23564;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 5px solid transparent;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.tab-ui .tabs .tab-item:hover {
+  opacity: 1;
+  background-color: rgba(194, 53, 100, 0.05);
+  border-color: rgba(194, 53, 100, 0.1);
+}
+.tab-ui .tabs .tab-item .tab-icon {
+  font-size: 24px;
+  width: 32px;
+  position: relative;
+  top: 2px;
+}
+.tab-ui .tabs .active {
+  opacity: 1;
+}
+.tab-ui .tabs .line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  border-radius: 15px;
+  background-color: #c23564;
+  transition: all 0.2s ease;
+}
+.tab-ui .tab-content {
+  text-align: left;
+  margin-top: 0;
+  max-width: 500px;
+}
+.tab-ui .tab-content .tab-pane {
+  color: #333;
+  display: none;
+}
+.tab-ui .tab-content .tab-pane h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.tab-ui .tab-content .tab-pane p {
+  font-size: 1.6rem;
+}
+.tab-ui .tab-content .active {
+  display: block;
+}
